@@ -1,0 +1,69 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Hoop paradise == By Shiruzen", "Ocean")
+
+
+local Tab = Window:NewTab("Main")
+local MainSection = Tab:NewSection("Main")
+
+
+MainSection:NewButton("Aimbot", "Jump to shoot", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/YcIayAlt/SOULSUCKERQUTIEEEE-333333/main/Batman"))()
+end)
+
+
+MainSection:NewButton("TeleportTool", "Use The Tool To Get the ball faster", function()
+    mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Equip to Click TP"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+
+MainSection:NewSlider("Walkspeed", "Speed", 50, 0, function(s) -- 50 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+
+MainSection:NewButton("Rejoin", "Rejoin if lag", function()
+    -- rejoin		
+local TeleportService = game:GetService("TeleportService")
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+ 
+local Rejoin = coroutine.create(function()
+    local Success, ErrorMessage = pcall(function()
+        TeleportService:Teleport(game.PlaceId, LocalPlayer)
+    end)
+ 
+    if ErrorMessage and not Success then
+        warn(ErrorMessage)
+    end
+end)
+ 
+coroutine.resume(Rejoin)
+end)
+
+
+MainSection:NewButton("Admin", "Admin", function()
+    loadstring(game:HttpGet("Https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end)
+
+
+local Tab = Window:NewTab("Teleport")
+local TeleportSection = Tab:NewSection("Teleport")
+
+
+TeleportSection:NewButton("Court", "This prolly shit", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-515.875916, 10.5900269, 177.269562, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+
+TeleportSection:NewButton("Teleport to player", "Type the player user", function()
+    loadstring(game:HttpGet(("https://pastebin.com/raw/YNVbeqPy")))()
+end)
